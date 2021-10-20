@@ -76,7 +76,7 @@ const Ventas = () => {
   return (
     <div className='form-group flex flex-col items-center justify-center'>
       <form ref={form} onSubmit={submitForm} className='flex flex-col h-full w-min'>
-        <h1 className='text-2xl font-extrabold text-yellow-900 p-3 mx-4 my-0'>Crear Venta</h1>
+        <h2 className='form-header text-2xl font-extrabold text-yellow-900 p-3 mx-4 my-0'>Crear Venta</h2>
         <label className='flex flex-col p-2' htmlFor='nombre'>
           Cliente
           <input

@@ -18,6 +18,7 @@ import Products from 'pages/Products';
 import Configuration from 'pages/Configuration';
 import NewUser from 'pages/NewUser';
 import { Auth0Provider } from "@auth0/auth0-react";
+import Footer from 'components/Footer';
 
 function App() {
   return (
@@ -31,11 +32,11 @@ function App() {
         <Switch>
           <Route path='/Menu'> <Navbar/> </Route>
           <Route path='/Home'><Navbar/><Home/></Route>   
-          <Route path='/Sales'><Navbar/><Sales/> </Route>
-          <Route path='/NewSales'><Navbar/><NewSales/> </Route>
-          <Route path='/Products'><Navbar/><Products/></Route>
+          <Route path='/Sales'><Navbar/><Sales/><Footer/></Route>
+          <Route path='/NewSales'><Navbar/><NewSales/><Footer/></Route>
+          <Route path='/Products'><Navbar/><Products/><Footer/></Route>
           <Route path='/NewProducts'><Navbar/><NewProducts/></Route>
-          <Route path='/Configuration'> <Navbar/><Configuration/></Route>   
+          <Route path='/Configuration'> <Navbar/><Configuration/><Footer/></Route>   
           <Route path='/NewUser'> <Navbar/><NewUser/></Route>          
           <Route path='/'> <Index /> </Route>     
         </Switch>        
