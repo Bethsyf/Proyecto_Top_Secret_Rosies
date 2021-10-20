@@ -285,7 +285,7 @@ const FilaProducto = ({ producto, setEjecutarConsulta}) => {
   );
 };
 
-const FormularioCreacionProductos = ({setMostrarTabla, listaProductos, setProductos }) => {
+const FormularioCreacionProductos = ({setMostrarTabla}) => {
   const form = useRef(null);
 
   const submitForm = async (e) => {
@@ -316,10 +316,10 @@ const FormularioCreacionProductos = ({setMostrarTabla, listaProductos, setProduc
   };
   
   return (
-    <div className='flex flex-col items-center justify-center'>
-      <h2 className='text-2xl font-extrabold text-yellow-900'>Crear nuevo Producto</h2>
-      <form ref={form} onSubmit={submitForm} className='flex flex-col'>
-        <label className='flex flex-col' htmlFor='descripcion'>
+    <div className='form-group flex flex-col items-center justify-center'>
+      <h2 className='text-2xl font-extrabold text-yellow-900 p-3 mx-4 my-0'>Crear Producto</h2>
+      <form ref={form} onSubmit={submitForm} className='mx-4 my-0 w-full'>
+        <label className='flex flex-col p-2' htmlFor='descripcion'>
           Descripcion del Producto
           <input
             name='description'
@@ -329,7 +329,7 @@ const FormularioCreacionProductos = ({setMostrarTabla, listaProductos, setProduc
             required
           />
         </label>
-        <label className='flex flex-col' htmlFor='valorUnitario'>
+        <label className='flex flex-col p-2' htmlFor='valorUnitario'>
           Valor Unitario
           <input
             name='unitValue'
@@ -339,7 +339,7 @@ const FormularioCreacionProductos = ({setMostrarTabla, listaProductos, setProduc
             required
           />
         </label>
-        <label className='flex flex-col' htmlFor='estado'>
+        <label className='justify-center p-2 m-2' htmlFor='estado'>
           Estado
           <select
             className='bg-gray-50 border border-gray-600 p-2 rounded-lg m-2'
@@ -361,6 +361,7 @@ const FormularioCreacionProductos = ({setMostrarTabla, listaProductos, setProduc
         >
           Guardar Producto
         </button>
+        
       </form>
     </div>
   );

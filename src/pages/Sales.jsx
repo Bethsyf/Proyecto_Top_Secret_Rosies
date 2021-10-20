@@ -397,10 +397,10 @@ const FormularioCreacionVentas = ({setMostrarTabla, listaVentas, setVentas }) =>
   };
   
   return (
-    <div className='flex flex-col items-center justify-center'>
-      <h2 className='text-2xl font-extrabold text-yellow-900'>Crear nueva Venta</h2>
-      <form ref={form} onSubmit={submitForm} className='flex flex-col'>
-        <label className='flex flex-col' htmlFor='nombre'>
+    <div className='form-group flex flex-col items-center justify-center'>
+      <h2 className='text-2xl font-extrabold text-yellow-900 p-3 mx-4 my-0'>Crear Venta</h2>
+      <form ref={form} onSubmit={submitForm} className='mx-10 my-0 w-full'>
+        <label className='flex flex-col p-2' htmlFor='nombre'>
           Cliente
           <input
             name='client'
@@ -410,7 +410,7 @@ const FormularioCreacionVentas = ({setMostrarTabla, listaVentas, setVentas }) =>
             required
           />
         </label>
-        <label className='flex flex-col' htmlFor='marca'>
+        <label className='flex flex-col p-2' htmlFor='marca'>
           Identificación
           <input
             name='identification'
@@ -420,7 +420,7 @@ const FormularioCreacionVentas = ({setMostrarTabla, listaVentas, setVentas }) =>
             required
           />
         </label>
-        <label className='flex flex-col' htmlFor='marca'>
+        <label className='flex flex-col p-2' htmlFor='marca'>
           Producto
           <input
             name='product'
@@ -430,7 +430,7 @@ const FormularioCreacionVentas = ({setMostrarTabla, listaVentas, setVentas }) =>
             required
           />
         </label>
-        <label className='flex flex-col' htmlFor='marca'>
+        <label className='flex flex-col p-2' htmlFor='marca'>
           Cantidad
           <input
             name='quantity'
@@ -440,7 +440,7 @@ const FormularioCreacionVentas = ({setMostrarTabla, listaVentas, setVentas }) =>
             required
           />
         </label>
-        <label className='flex flex-col' htmlFor='marca'>
+        <label className='flex flex-col p-2' htmlFor='marca'>
           Precio
           <input
             name='unitValue'
@@ -450,7 +450,7 @@ const FormularioCreacionVentas = ({setMostrarTabla, listaVentas, setVentas }) =>
             required
           />
         </label>
-        <label className='flex flex-col' htmlFor='marca'>
+        <label className='flex flex-col p-2' htmlFor='marca'>
           Valor Total
           <input
             name='totalValue'
@@ -460,7 +460,7 @@ const FormularioCreacionVentas = ({setMostrarTabla, listaVentas, setVentas }) =>
             required
           />
         </label>
-        <label className='flex flex-col' htmlFor='nombre'>
+        <label className='flex flex-col p-2' htmlFor='nombre'>
           Vendedor
           <input
             name='seller'
@@ -470,7 +470,7 @@ const FormularioCreacionVentas = ({setMostrarTabla, listaVentas, setVentas }) =>
             required
           />
         </label>
-        <label className='flex flex-col' htmlFor='modelo'>
+        <label className='flex flex-col p-2' htmlFor='modelo'>
           Estado de la Venta
           <select
             className='bg-gray-50 border border-gray-600 p-2 rounded-lg m-2'
