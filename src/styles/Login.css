@@ -33,9 +33,9 @@ form {
 }
 
 .logo-tsr{      
-    height: 200px;    
-    text-align: center;
-    margin: 20px;
+    height: 300px;    
+    margin-left: 25%;
+    margin-top: 40px;
 }
 
 .logo-google{
@@ -54,6 +54,7 @@ a:link, a:visited, a:active {
 
 .L_Ingresar{    
     text-align: center;
+    color: black;
     margin-left:31%;
     padding: 2%;  
     background-color: #ca7062;
@@ -61,7 +62,7 @@ a:link, a:visited, a:active {
     border-radius: 10px;
     width: 200px;
     height:35px ;
-    font-size: inherit;
+    font-size:inherit;
     font-family: 'Montserrat';
     margin-top: 8%;    
     margin-left: 25%;   
@@ -71,5 +72,5 @@ a:link, a:visited, a:active {
 .Footer{
     text-align: center;
     font-weight: bold;
-    font-size: 10px;    
+    font-size: 15px;    
 }
