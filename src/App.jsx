@@ -18,6 +18,7 @@ import Products from 'pages/Products';
 import Configuration from 'pages/Configuration';
 import NewUser from 'pages/NewUser';
 import { Auth0Provider } from "@auth0/auth0-react";
+import PrivateRoute from 'components/PrivateRoute';
 
 function App() {
   return (
@@ -30,13 +31,13 @@ function App() {
       <Router>
         <Switch>
           <Route path='/Menu'> <Navbar/> </Route>
-          <Route path='/Home'><Navbar/><Home/></Route>   
-          <Route path='/Sales'><Navbar/><Sales/> </Route>
-          <Route path='/NewSales'><Navbar/><NewSales/> </Route>
-          <Route path='/Products'><Navbar/><Products/></Route>
-          <Route path='/NewProducts'><Navbar/><NewProducts/></Route>
-          <Route path='/Configuration'> <Navbar/><Configuration/></Route>   
-          <Route path='/NewUser'> <Navbar/><NewUser/></Route>          
+          <PrivateRoute path='/Home'><Navbar/><Home/></PrivateRoute>   
+          <PrivateRoute path='/Sales'><Navbar/><Sales/> </PrivateRoute>
+          <PrivateRoute path='/NewSales'><Navbar/><NewSales/> </PrivateRoute>
+          <PrivateRoute path='/Products'><Navbar/><Products/></PrivateRoute>
+          <PrivateRoute path='/NewProducts'><Navbar/><NewProducts/></PrivateRoute>
+          <PrivateRoute path='/Configuration'> <Navbar/><Configuration/></PrivateRoute>   
+          <PrivateRoute path='/NewUser'> <Navbar/><NewUser/></PrivateRoute>          
           <Route path='/'> <Index /> </Route>     
         </Switch>        
       </Router>
