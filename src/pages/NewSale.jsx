@@ -74,10 +74,10 @@ const Ventas = () => {
   };
 
   return (
-    <div className='flex h-full w-full items-center justify-center'>
+    <div className='form-group flex flex-col items-center justify-center'>
       <form ref={form} onSubmit={submitForm} className='flex flex-col h-full w-min'>
-        <h1 className='flex flex-col text-3xl font-extrabold text-gray-900 my-3 '>Crear Nueva Venta</h1>
-        <label className='flex flex-col' htmlFor='nombre'>
+        <h1 className='text-2xl font-extrabold text-yellow-900 p-3 mx-4 my-0'>Crear Venta</h1>
+        <label className='flex flex-col p-2' htmlFor='nombre'>
           Cliente
           <input
             name='client'
@@ -87,7 +87,7 @@ const Ventas = () => {
             required
           />
         </label>
-        <label className='flex flex-col' htmlFor='marca'>
+        <label className='flex flex-col p-2' htmlFor='marca'>
           Identificación
           <input
             name='identification'
@@ -97,8 +97,8 @@ const Ventas = () => {
             required
           />
           </label>
-        <label className='flex flex-col' htmlFor='vendedor'>
-          <span className='text-2xl font-gray-900'>Vendedor</span>
+        <label className='flex flex-col p-2' htmlFor='vendedor'>
+          <span className='font-gray-900'>Vendedor</span>
           <select name='vendedor' className='p-2' defaultValue='' required>
             <option disabled value=''>
               Seleccione un Vendedor
@@ -115,8 +115,8 @@ const Ventas = () => {
           setProductosTabla={setProductosTabla}
         />
 
-        <label className='flex flex-col'>
-          <span className='text-2xl font-gray-900'>Valor Total Venta</span>
+        <label className='flex flex-col p-2'>
+          <span className='font-gray-900'>Valor Total Venta</span>
           <input
             className='bg-gray-50 border border-gray-600 p-2 rounded-lg m-2'
             type='number'
@@ -124,7 +124,7 @@ const Ventas = () => {
             required
           />
         </label>
-        <label className='flex flex-col' htmlFor='estado'>
+        <label className='flex flex-col p-2' htmlFor='estado'>
           Estado de la Venta
           <select
             className='bg-gray-50 border border-gray-600 p-2 rounded-lg m-2'
