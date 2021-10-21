@@ -19,7 +19,7 @@ import Configuration from 'pages/Configuration';
 import NewUser from 'pages/NewUser';
 import { Auth0Provider } from "@auth0/auth0-react";
 import PrivateRoute from 'components/PrivateRoute';
-
+import Footer from 'components/Footer';
 
 function App() {
   return (
@@ -33,12 +33,12 @@ function App() {
         <Switch>
           <Route path='/Menu'> <Navbar/> </Route>
           <PrivateRoute path='/Home'><Navbar/><Home/></PrivateRoute>   
-          <PrivateRoute path='/Sales'><Navbar/><Sales/> </PrivateRoute>
-          <PrivateRoute path='/NewSales'><Navbar/><NewSales/> </PrivateRoute>
-          <PrivateRoute path='/Products'><Navbar/><Products/></PrivateRoute>
-          <PrivateRoute path='/NewProducts'><Navbar/><NewProducts/></PrivateRoute>
-          <PrivateRoute path='/Configuration'> <Navbar/><Configuration/></PrivateRoute>   
-          <PrivateRoute path='/NewUser'> <Navbar/><NewUser/></PrivateRoute>          
+          <PrivateRoute path='/Sales'><Navbar/><Sales/><Footer/> </PrivateRoute>
+          <PrivateRoute path='/NewSales'><Navbar/><NewSales/><Footer/> </PrivateRoute>
+          <PrivateRoute path='/Products'><Navbar/><Products/><Footer/></PrivateRoute>
+          <PrivateRoute path='/NewProducts'><Navbar/><NewProducts/><Footer/></PrivateRoute>
+          <PrivateRoute path='/Configuration'> <Navbar/><Configuration/><Footer/></PrivateRoute>   
+          <PrivateRoute path='/NewUser'> <Navbar/><NewUser/><Footer/></PrivateRoute>          
           <Route path='/'> <Index /> </Route>     
         </Switch>        
       </Router>
