@@ -34,7 +34,7 @@ function App() {
           <Route path='/Menu'> <Navbar/> </Route>
           <PrivateRoute path='/Home'><Navbar/><Home/></PrivateRoute>   
           <PrivateRoute path='/Sales'><Navbar/><Sales/><Footer/> </PrivateRoute>
-          <PrivateRoute path='/NewSales'><Navbar/><NewSales/><Footer/> </PrivateRoute>
+          <Route path='/NewSales'><Navbar/><NewSales/><Footer/> </Route>
           <PrivateRoute path='/Products'><Navbar/><Products/><Footer/></PrivateRoute>
           <PrivateRoute path='/NewProducts'><Navbar/><NewProducts/><Footer/></PrivateRoute>
           <PrivateRoute path='/Configuration'> <Navbar/><Configuration/><Footer/></PrivateRoute>   
