@@ -25,6 +25,7 @@ const Users = () => {
         console.error('Salio un error:', error);
       }
     );
+    
   }
 }, [ejecutarConsulta]);
 
@@ -48,7 +49,7 @@ const Users = () => {
     <div className='flex h-full w-full flex-col items-center justify-start'>
     <div className='flex flex-col w-full'>
       <div>
-      <h2 className="t_modulo">Gestión de Productos</h2> 
+      <h2 className="t_modulo">Gestión de Usuarios</h2> 
       </div >
       <button
           onClick={() => {
@@ -99,8 +100,8 @@ const TablaUsuarios = ({ listaUsuarios, setEjecutarConsulta }) => {
           <thead>
             <tr>
               <th className='bg-yellow-700'>Id</th>
-              <th className='bg-yellow-700'>Nombre</th>
-              <th className='bg-yellow-700'>Apellido</th>
+              <th className='bg-yellow-700'>name</th>
+              <th className='bg-yellow-700'>surname</th>
               <th className='bg-yellow-700'>email</th>
               <th className='bg-yellow-700'>Estado</th>
               <th className='bg-yellow-700'>Rol</th>
@@ -158,7 +159,7 @@ const FilaUsuario = ({ usuario, setEjecutarConsulta}) => {
         surname: infoNuevoUsuario.surname,
         email: infoNuevoUsuario.email,
         state: infoNuevoUsuario.state,
-        role: infoNuevoUsuario.role,
+        role: infoNuevoUsuario.role
       },
       (response) => {
         console.log(response.data);
@@ -208,9 +209,7 @@ const FilaUsuario = ({ usuario, setEjecutarConsulta}) => {
               className='bg-gray-50 border border-yellow-900 p-2 rounded-lg m-2'
               type='text'
               value={infoNuevoUsuario.surname}
-              onChange={(e) =>
-                setInfoNuevoUsuario({ ...infoNuevoUsuario, surname: e.target.value })
-              }
+              onChange={(e) => setInfoNuevoUsuario({ ...infoNuevoUsuario, surname: e.target.value })}
             />
           </td>
           <td>
@@ -273,13 +272,13 @@ const FilaUsuario = ({ usuario, setEjecutarConsulta}) => {
             </>
           ) : (
             <>
-              <Tooltip title='Editar Usuario' arrow>
+              <Tooltip title='Editar Producto' arrow>
                 <i
                   onClick={() => setEdit(!edit)}
                   className='fas fa-pencil-alt text-yellow-900 hover:text-yellow-700'
                 />
               </Tooltip>
-              <Tooltip title='Eliminar Usuario' arrow>
+              <Tooltip title='Eliminar Producto' arrow>
                 <i
                   onClick={() => setOpenDialog(true)}
                   className='fas fa-trash text-red-900 hover:text-red-700'
@@ -314,7 +313,7 @@ const FilaUsuario = ({ usuario, setEjecutarConsulta}) => {
   );
 };
 
-const FormularioCreacionUsuarios = ({setMostrarTabla, listaUsuarios, setUsuarios}) => {
+const FormularioCreacionUsuarios = ({setMostrarTabla}) => {
   const form = useRef(null);
 
   const submitForm = async (e) => {
@@ -322,8 +321,8 @@ const FormularioCreacionUsuarios = ({setMostrarTabla, listaUsuarios, setUsuarios
     const fd = new FormData(form.current);
 
     const nuevoUsuario = {};
-    fd.forEach((value, key) => {
-      nuevoUsuario[key] = value;
+    fd.forEach((value, llave) => {
+      nuevoUsuario[llave] = value;
     });
 
     await crearUsuario(
@@ -344,15 +343,13 @@ const FormularioCreacionUsuarios = ({setMostrarTabla, listaUsuarios, setUsuarios
       }
     );
     setMostrarTabla(true);
-    listaUsuarios(true);
-    setUsuarios(true);
   };
   
   return (
-    <div className='flex flex-col items-center justify-center '>
-      <h2 className='text-2xl font-extrabold text-yellow-900'>Crear Nuevo Usuario</h2>
-      <form ref={form} onSubmit={submitForm} className='flex flex-col'>
-        <label className='flex flex-col' htmlFor='nombre'>
+    <div className='form-group flex flex-col items-center justify-center'>
+      <h2 className='text-2xl font-extrabold text-yellow-900 p-3 mx-4 my-0'>Crear Usuario</h2>
+      <form ref={form} onSubmit={submitForm} className='mx-4 my-0 w-full'>
+        <label className='flex flex-col p-2' htmlFor='name'>
           Nombre del Usuario
           <input
             name='name'
@@ -362,7 +359,7 @@ const FormularioCreacionUsuarios = ({setMostrarTabla, listaUsuarios, setUsuarios
             required
           />
         </label>
-        <label className='flex flex-col' htmlFor='apellido'>
+        <label className='flex flex-col p-2' htmlFor='surname'>
           Apellido del Usuario
           <input
             name='surname'
@@ -372,17 +369,17 @@ const FormularioCreacionUsuarios = ({setMostrarTabla, listaUsuarios, setUsuarios
             required
           />
         </label>
-        <label className='flex flex-col' htmlFor='correo'>
-          Correo
+        <label className='flex flex-col p-2' htmlFor='email'>
+          email
           <input
             name='email'
             className='bg-gray-50 border border-gray-600 p-2 rounded-lg m-2'
             type='email'
-            placeholder='joser@gmail.com'
+            placeholder='luisrodriguez@gmail.com'
             required
           />
         </label>
-        <label className='flex flex-col' htmlFor='estado'>
+        <label className='justify-center p-2 m-2' htmlFor='estado'>
           Estado
           <select
             className='bg-gray-50 border border-gray-600 p-2 rounded-lg m-2'
@@ -394,12 +391,12 @@ const FormularioCreacionUsuarios = ({setMostrarTabla, listaUsuarios, setUsuarios
               Seleccione una opción
             </option>
             <option>Pendiente</option>
-            <option>Autorizado</option> 
-            <option>No Autorizado</option>       
+            <option>Autorizado</option>
+            <option>No autorizado</option>        
             </select>
         </label>
-        <label className='flex flex-col' htmlFor='rol'>
-         Rol
+        <label className='justify-center p-2 m-2' htmlFor='rol'>
+          Rol
           <select
             className='bg-gray-50 border border-gray-600 p-2 rounded-lg m-2'
             name='role'
@@ -420,6 +417,7 @@ const FormularioCreacionUsuarios = ({setMostrarTabla, listaUsuarios, setUsuarios
         >
           Guardar Usuario
         </button>
+        
       </form>
     </div>
   );

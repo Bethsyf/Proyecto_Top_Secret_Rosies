@@ -20,6 +20,7 @@ import NewUser from 'pages/NewUser';
 import { Auth0Provider } from "@auth0/auth0-react";
 import PrivateRoute from 'components/PrivateRoute';
 
+
 function App() {
   return (
     <Auth0Provider
