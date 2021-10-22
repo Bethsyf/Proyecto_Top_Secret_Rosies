@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseURL = "https://pacific-oasis-43276.herokuapp.com"
+const baseURL = "https://powerful-eyrie-81914.herokuapp.com/"
 
 export const obtenerProductos = async (successCallback, errorCallback) => {
   const options = { method: 'GET', url: `${baseURL}/products/` };
