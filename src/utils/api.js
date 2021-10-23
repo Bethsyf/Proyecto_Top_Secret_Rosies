@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+const baseURL = "powerful-eyrie-81914.herokuapp.com"
+
 const getToken = () => {
   return `Bearer ${localStorage.getItem('token')}`;     //string literal
 
@@ -8,7 +10,7 @@ const getToken = () => {
 export const obtenerProductos = async (successCallback, errorCallback) => {
   const options = {
      method: 'GET', 
-     url: 'http://localhost:5000/products/',
+     url: `${baseURL}/products/`,
      headers: {
       Authorization: getToken(),
     },
@@ -19,7 +21,7 @@ export const obtenerProductos = async (successCallback, errorCallback) => {
 export const crearProducto = async (data, successCallback, errorCallback) => {
   const options = {
     method: 'POST',
-    url: 'http://localhost:5000/products/',
+    url: `${baseURL}/products/`,
     headers: { 'Content-Type': 'application/json',Authorization: getToken() },
     data,
   };
@@ -29,7 +31,7 @@ export const crearProducto = async (data, successCallback, errorCallback) => {
 export const editarProducto = async (id, data, successCallback, errorCallback) => {
   const options = {
     method: 'PATCH',
-    url: `http://localhost:5000/products/${id}/`,
+    url: `${baseURL}/products/${id}/`,
     headers: { 'Content-Type': 'application/json',Authorization: getToken() },
     data,
   };
@@ -39,7 +41,7 @@ export const editarProducto = async (id, data, successCallback, errorCallback) =
 export const eliminarProducto = async (id, successCallback, errorCallback) => {
   const options = {
     method: 'DELETE',
-    url: `http://localhost:5000/products/${id}/`,
+    url: `${baseURL}/products/${id}/`,
     headers: { 'Content-Type': 'application/json', Authorization: getToken() },
   };
   await axios.request(options).then(successCallback).catch(errorCallback);
@@ -50,7 +52,7 @@ export const eliminarProducto = async (id, successCallback, errorCallback) => {
 export const obtenerVentas = async (successCallback, errorCallback) => {
   const options = { 
     method: 'GET',
-    url: 'http://localhost:5000/sales/',
+    url: `${baseURL}/sales/`,
     headers: {
       Authorization: getToken(),
     },
@@ -62,7 +64,7 @@ export const obtenerVentas = async (successCallback, errorCallback) => {
 export const crearVenta = async (data, successCallback, errorCallback) => {
   const options = {
     method: 'POST',
-    url: 'http://localhost:5000/newSales/',
+    url: `${baseURL}/newSales/`,
     headers: { 'Content-Type': 'application/json',Authorization: getToken() },
     data,
   };
@@ -72,7 +74,7 @@ export const crearVenta = async (data, successCallback, errorCallback) => {
 export const editarVenta = async (id, data, successCallback, errorCallback) => {
   const options = {
     method: 'PATCH',
-    url: `http://localhost:5000/sales/${id}/`,
+    url: `${baseURL}/sales/${id}/`,
     headers: { 'Content-Type': 'application/json',Authorization: getToken() },
     data,
   };
@@ -82,7 +84,7 @@ export const editarVenta = async (id, data, successCallback, errorCallback) => {
 export const eliminarVenta = async (id, successCallback, errorCallback) => {
   const options = {
     method: 'DELETE',
-    url: `http://localhost:5000/sales/${id}/`,
+    url: `${baseURL}/sales/${id}/`,
     headers: { 'Content-Type': 'application/json',Authorization: getToken() },
   };
   await axios.request(options).then(successCallback).catch(errorCallback);
@@ -93,7 +95,7 @@ export const eliminarVenta = async (id, successCallback, errorCallback) => {
 export const obtenerUsuarios = async (successCallback, errorCallback) => {
   const options = { 
     method: 'GET', 
-    url: 'http://localhost:5000/configuration/',
+    url: `${baseURL}/configuration/`,
     headers: {
       Authorization: getToken(),
     },
@@ -104,7 +106,7 @@ export const obtenerUsuarios = async (successCallback, errorCallback) => {
 export const crearUsuario = async (data, successCallback, errorCallback) => {
   const options = {
     method: 'POST',
-    url: 'http://localhost:5000/configuration/',
+    url: `${baseURL}/configuration/`,
     headers: { 'Content-Type': 'application/json',Authorization: getToken() },
     data,
   };
@@ -114,7 +116,7 @@ export const crearUsuario = async (data, successCallback, errorCallback) => {
 export const editarUsuario = async (id, data, successCallback, errorCallback) => {
   const options = {
     method: 'PATCH',
-    url: `http://localhost:5000/configuration/${id}/`,
+    url: `${baseURL}/configuration/${id}/`,
     headers: { 'Content-Type': 'application/json', Authorization: getToken() },
     data,
   };
@@ -124,7 +126,7 @@ export const editarUsuario = async (id, data, successCallback, errorCallback) =>
 export const eliminarUsuario = async (id, successCallback, errorCallback) => {
   const options = {
     method: 'DELETE',
-    url: `http://localhost:5000/configuration/${id}/`,
+    url: `${baseURL}/configuration/${id}/`,
     headers: { 'Content-Type': 'application/json', Authorization: getToken() },
   };
   await axios.request(options).then(successCallback).catch(errorCallback);
