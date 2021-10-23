@@ -26,8 +26,9 @@ function App() {
     <Auth0Provider
       domain="misiontic-tsr.us.auth0.com"
       clientId="sZdjwhCVXbbhTzZKaqN80mqBDvejHTyr"
-      redirectUri="https://pacific-oasis-43276.herokuapp.com/home":3000/home"
+      redirectUri="https://pacific-oasis-43276.herokuapp.com/home"
       audience= "api-autenticacion-trs"
+      >
 
     <div className='App'>
       <Router>
