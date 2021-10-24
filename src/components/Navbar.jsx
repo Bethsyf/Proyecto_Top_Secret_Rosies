@@ -12,7 +12,7 @@ function Navbar() {
     const {logout} =useAuth0();
 
     const cerrarSesion = () => {
-      logout({returnTo: 'http://localhost:3000/'});
+      logout({returnTo: 'https://pacific-oasis-43276.herokuapp.com/'});
       localStorage.setItem('token', null);
     };
   
