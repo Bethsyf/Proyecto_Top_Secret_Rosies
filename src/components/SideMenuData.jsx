@@ -37,27 +37,15 @@ export const SidebarData = [
     cName: 'nav-text'
   },
   
-  {
-    title: 'Cerrar sesión',
-    path: '/',
-    icon: <CgIcons.CgLogOff />,
-    cName: 'nav-text'
+  // {
+  //   title: 'Cerrar sesión',
+  //   path: '/',
+  //   icon: <CgIcons.CgLogOff />,
+  //   cName: 'nav-text'
 
-  },
+  // },
 
   
 ];
-    
-const LogoutButton = () => {
-  const { logout } = useAuth0();
 
-  return (
-    <button onClick={() => logout({ returnTo: window.location.origin })}>
-      Log Out
-    </button>
-  );
-};
-
-export default LogoutButton;
-            
      
